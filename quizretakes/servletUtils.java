@@ -1,15 +1,11 @@
 // JO 9-Jan-2019
 // Utilities for servlets ... shared methods
-package quizretakes;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.ServletException;
-import javax.servlet.ServletContext;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
 
 /**
  * @author Jeff Offutt
@@ -55,14 +51,9 @@ static void printHeader (PrintWriter out) throws ServletException, IOException
  * @throws ServletException
  * @throws IOException
  */
-static void printFooter (PrintWriter out) throws ServletException, IOException
+static String getFooter () 
 {
-   out.println ("<p style=\"font-size:80%;font-family:monospace; color:#888888\">");
-   out.println ("Rasika Mohod &amp; Jeff Offutt");
-   out.println ("<br/>January 2019");
-   out.println ("</p>");
-   out.println ("</body>");
-   out.println ("</html>");
+   return("Rasika Mohod &amp; Jeff Offutt \nJanurary 2019");  
 }
 
 /**

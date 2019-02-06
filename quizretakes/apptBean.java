@@ -1,7 +1,3 @@
-package quizretakes;
-
-import java.time.*;
-
 /**
  * This bean holds a single quiz retake appointment
 

@@ -3,28 +3,23 @@
 // Stores in a quizList and returns
 // No xsd or validation as yet
 
-package quizretakes;
 
-import java.lang.*;
+
+// These classes read the sample XML file and manage output:
+import java.io.File;
 import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-
 
 // XML parsers are so needy
 // package dom; // in the documentation I found
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-// These classes read the sample XML file and manage output:
-import java.io.File;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 public class quizReader
 {

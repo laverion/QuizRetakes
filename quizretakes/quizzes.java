@@ -1,7 +1,10 @@
-package quizretakes;
+
 
 // import java.io.Serializable; ?? Needed?
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * This class holds a collection of quizzes

@@ -1,8 +1,8 @@
 //JO, 10-Jan-2019
 // Stores course information in a bean
-package quizretakes;
 
-import java.time.*;
+
+import java.time.LocalDate;
 
 /**
  * This bean holds information about a course

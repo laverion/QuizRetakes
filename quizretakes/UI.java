@@ -1,10 +1,6 @@
-package quizretakes;
 
-import java.io.IOException;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
+import java.util.Scanner;
 
 public class UI {
 	
@@ -28,73 +24,82 @@ public class UI {
 		return null;
 	}
 	
-	
-	courseBean courseBean; 
-	courseReader courseReader;
-	quizBean quizBean;
-	quizReader quizReader;
-	
-	String courseID, name;
-	
+//	
+//	courseBean courseBean; 
+//	courseReader courseReader;
+//	quizBean quizBean;
+//	quizReader quizReader;
+//	
+//	String courseID, name;
+//	
 	
 	public UI() {
-		courseReader = new courseReader();
-		
-		
-		startUI();
-	}
-	
-	
-	public void startUI() {
-		//sets courseID
-		runCourseUI("");
-		
-		// set Name
-		runNameUI();
-		
-		//getDate Selection
-		runSelectionUI();
-		
-		//store it in the XML
-		saveToXML();
-	}
-	
-	/**
-	 * Saves everything to XML
-	 */
-	public void saveToXML() {
+		quizschedule quizschedule = new quizschedule();
+		quizschedule.doGet(this);
 		
 	}
 	
-	/**
-	 * Sets the times the user has selected
-	 */
-	public void runSelectionUI() {
-		//create a field variable of some data type that holds all dates the user has selected 
-	}
 	
-	/**
-	 * Sets the name
-	 */
-	public void runNameUI() {
-		
-	}
-	
-	/**
-	 * Sets a valid CourseID from the User if not then it calls itself recursively with error msg. Sets the courseID. 
-	 * @param msg
-	 */
-	public void runCourseUI(String msg) {
-		print(msg,true);
-		try {
-			courseReader.read("course-swe437.xml");
-		} catch (IOException | ParserConfigurationException | SAXException e) {
-			runCourseUI("Cannot open courseFile");
-		}
-		//needs implementation 
-	}
-	
-	
+//	public void startUI() {
+//		//sets courseID
+//		runCourseUI("");
+//		
+//		// set Name
+//		runNameUI();
+//		
+//		//getDate Selection
+//		runSelectionUI();
+//		
+//		//store it in the XML
+//		saveToXML();
+//	}
+//	
+//	/**
+//	 * Saves everything to XML
+//	 */
+//	public void saveToXML() {
+//		
+//		
+//	}
+//	
+//	/**
+//	 * Sets the times the user has selected
+//	 */
+//	public void runSelectionUI() {
+//		//create a field variable of some data type that holds all dates the user has selected 
+//		//EDEN
+//	}
+//	
+//	/**
+//	 * Sets the name
+//	 */
+//	public void runNameUI() {
+//		
+//	}
+//	
+//	/**
+//	 * Sets a valid CourseID from the User if not then it calls itself recursively with error msg. Sets the courseID. 
+//	 * @param msg
+//	 */
+//	public void runCourseUI(String msg) {
+//		//Mrinmoy
+//		print(msg,true);
+//		try {
+//			courseBean= courseReader.read("course-swe437.xml");
+//		} catch (IOException | ParserConfigurationException | SAXException e) {
+//			runCourseUI("Cannot open courseFile");
+//		}
+//		
+//		courseID= getUserChoice("UserID: ");
+//		
+//		if(!courseID.equals(courseBean.getCourseID())) {
+//			runCourseUI("");
+//		}
+//		
+//		//needs implementation 
+//	}
+//	
+//	
 	
 	/**
 	 * Prompts the user to enter an String 
@@ -102,7 +107,11 @@ public class UI {
 	 * @return User input string 
 	 */
 	public String getUserChoice(String options) {
-		return null;
+		print(options, false);
+		Scanner scan = new Scanner(System.in);
+		String str = scan.nextLine();
+		
+		return str;
 	}
 	
 	
@@ -113,6 +122,7 @@ public class UI {
 	 * @return return an array of int within the range
 	 */
 	public int[] getUserChoice(String options, int range) {
+		//Eden
 		return null;
 	}
 	
@@ -124,13 +134,24 @@ public class UI {
 	public void print(String x, boolean newLine) {
 		if(newLine)
 			x+="\n";
-		System.out.println(x);
+		System.out.print(x);
+	}
+	
+	/**
+	 * Prints to the user 
+	 * @param x String to be outputted
+	 */
+	public void println(String x) {
+		print(x, true);
 	}
 	
 	
 	
 	public static void main(String[] args) {
+		System.out.println("Testfjkfldslfkj");
+		quizschedule Quizschedule = new quizschedule();
 		
+		UI ui = new UI();
 
 	}
 }
