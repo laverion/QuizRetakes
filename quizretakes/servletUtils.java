@@ -2,10 +2,10 @@
 // Utilities for servlets ... shared methods
 
 
-import java.io.IOException;
+
 import java.io.PrintWriter;
 
-import javax.servlet.ServletException;
+
 
 /**
  * @author Jeff Offutt
@@ -19,30 +19,13 @@ public class servletUtils
 
 /**
  * Print the header of the HTML pages
- * @param out PrintWriter
- * @throws ServletException
- * @throws IOException
+ * @param ui PrintWriter
 */
-static void printHeader (PrintWriter out) throws ServletException, IOException
+static String getHeader () 
 {
-   out.println ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-   out.println ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
-   out.println ("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">");
-   out.println ("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />");
-   out.println ("<head>");
-   out.println ("  <title>Quiz retake scheduler</title>");
-   out.println ("  <script type='text/javascript'>");
-   out.println ("     function setFocusMain()");
-   out.println ("     {");
-   out.println ("       document.quizSchedule.studentName.focus();");
-   out.println ("     }");
-   out.println ("     function setFocusID()");
-   out.println ("     {");
-   out.println ("       document.getCourseID.courseID.focus();");
-   out.println ("     }");
-   out.println ("</script>");
-   out.println ("</head>");
-   out.println ("");
+
+   return("Quiz retake scheduler\n------------------------");
+
 }
 
 /**
@@ -62,26 +45,5 @@ static String getFooter ()
  * @throws ServletException
  * @throws IOException
 */
-static void printNeedCourseID (PrintWriter out, String thisServlet, String message) throws ServletException, IOException
-{
-   out.println ("<body onLoad=\"setFocusID()\" bgcolor=\"#DDEEDD\">");
-   out.println ("");
-   out.println ("<center><h2>GMU quiz retake scheduler</h2></center>");
-   out.println ("<hr/>");
-   out.println ("");
 
-   // print the form
-   out.println ("<form name='getCourseID' method='get' action='" + thisServlet + "' >");
-out.print (message);
-   out.print   ("  <p>Please enter the course ID given to you by your instructor. ");
-   out.print   ("     It is probably the same as the university course ID, with no spaces. ");
-   out.println ("  <br/>");
-
-   out.print   ("  <p>courseID: ");
-   out.println ("  <input type='text' id='courseID' name='courseID' size='15' />");
-   out.println ("  <br/>");
-   out.println ("  <br/>");
-   out.println ("  <button id='submitRequest' type='submit' style='font-size:large'>Submit</button>");
-   out.println ("</form>");
-}
 } // end servletUtils class

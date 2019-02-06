@@ -40,67 +40,6 @@ public class UI {
 	}
 	
 	
-//	public void startUI() {
-//		//sets courseID
-//		runCourseUI("");
-//		
-//		// set Name
-//		runNameUI();
-//		
-//		//getDate Selection
-//		runSelectionUI();
-//		
-//		//store it in the XML
-//		saveToXML();
-//	}
-//	
-//	/**
-//	 * Saves everything to XML
-//	 */
-//	public void saveToXML() {
-//		
-//		
-//	}
-//	
-//	/**
-//	 * Sets the times the user has selected
-//	 */
-//	public void runSelectionUI() {
-//		//create a field variable of some data type that holds all dates the user has selected 
-//		//EDEN
-//	}
-//	
-//	/**
-//	 * Sets the name
-//	 */
-//	public void runNameUI() {
-//		
-//	}
-//	
-//	/**
-//	 * Sets a valid CourseID from the User if not then it calls itself recursively with error msg. Sets the courseID. 
-//	 * @param msg
-//	 */
-//	public void runCourseUI(String msg) {
-//		//Mrinmoy
-//		print(msg,true);
-//		try {
-//			courseBean= courseReader.read("course-swe437.xml");
-//		} catch (IOException | ParserConfigurationException | SAXException e) {
-//			runCourseUI("Cannot open courseFile");
-//		}
-//		
-//		courseID= getUserChoice("UserID: ");
-//		
-//		if(!courseID.equals(courseBean.getCourseID())) {
-//			runCourseUI("");
-//		}
-//		
-//		//needs implementation 
-//	}
-//	
-//	
-	
 	/**
 	 * Prompts the user to enter an String 
 	 * @param options The message that will be displayed 
@@ -148,8 +87,6 @@ public class UI {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("Testfjkfldslfkj");
-		quizschedule Quizschedule = new quizschedule();
 		
 		UI ui = new UI();
 

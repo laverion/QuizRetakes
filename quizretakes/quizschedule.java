@@ -68,10 +68,13 @@ public class quizschedule
 
 protected void doGet(UI ui)
 {	
+	
 	//prints the header and the footer
+	ui.println(servletUtils.getHeader());
 	ui.println(servletUtils.getFooter());
+	ui.println("");
    // CourseID must be a parameter (also in course XML file, but we need to know which course XML file ...)
-   courseID = ui.getUserChoice("courseID: ");
+   courseID = ui.getUserChoice("Please enter the courseID: ");
    if (courseID != null && !courseID.isEmpty())
    {  // If not, ask for one.
       courseBean course;
@@ -111,10 +114,7 @@ protected void doGet(UI ui)
          return;
       }
    }
-   else
-   {
-      //servletUtils.printNeedCourseID (ui, thisServlet, "");
-   }
+  
    
 }
 
@@ -135,9 +135,9 @@ protected void doPost (String courseID, String name, String inputArray[],UI ui)
    String studentName = name;
    String[] allIDs    = inputArray;
 
-   ui.println("Header\n-------");
 
-
+   ui.println("");
+   
    if(allIDs != null && studentName != null && studentName.length() > 0)
    {
       // Append the new appointment to the file
@@ -168,30 +168,28 @@ protected void doPost (String courseID, String name, String inputArray[],UI ui)
       // Respond to the student
       if (IOerrFlag)
       {
-         ui.println ("<p>");
          ui.println (IOerrMessage);
       } else {
-         ui.println ("<p>");
+  
          if (allIDs.length == 1)
             ui.println (studentName + ", your appointment has been scheduled.");
          else
             ui.println (studentName + ", your appointments have been scheduled.");
-         ui.println ("<p>Please arrive in time to finish the quiz before the end of the retake period.");
-         ui.println ("<p>If you cannot make it, please cancel by sending email to your professor.");
+         ui.println ("Please arrive in time to finish the quiz before the end of the retake period.");
+         ui.println ("If you cannot make it, please cancel by sending email to your professor.");
       }
 
    } else { // allIDs == null or name is null
-      ui.println ("<body bgcolor=\"#DDEEDD\">");
+      
       if(allIDs == null)
-         ui.println ("<p>You didn't choose any quizzes to retake.");
+         ui.println ("You didn't choose any quizzes to retake.");
       if(studentName == null || studentName.length() == 0)
-         ui.println ("<p>You didn't give a name ... no anonymous quiz retakes.");
+         ui.println ("You didn't give a name ... no anonymous quiz retakes.");
 
       ui.println("You can try again if you like");
       //starts all over again
       doGet(ui);
    }
-   ui.print(servletUtils.getFooter(), (true));
 }
 
 /**
@@ -272,15 +270,16 @@ private void printQuizScheduleForm (UI ui, quizzes quizList, retakes retakesList
          }
          
       }
-      
-      //gets the user dates 
-      String input = ui.getUserChoice("\nPlease Select the Quizes you wish to retake. And seperate then using one space only. ex 1"+separator+"1\n: ");
-      inputArray= input.split(" ");
-      
-      //calls the do post method to do the saving 
-      doPost(input, name, inputArray, ui);
+
     
-}
-}
+   	}
+   
+   //gets the user dates 
+   String input = ui.getUserChoice("\nPlease Select the Quizes you wish to retake. And seperate then using one space only. ex 1"+separator+"1\n: ");
+   inputArray= input.split(" ");
+   
+   //calls the do post method to do the saving 
+   doPost(input, name, inputArray, ui);
+	}
 }
 
