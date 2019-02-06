@@ -1,37 +1,37 @@
 # Initial target servlet front end
 quizschedule : quizschedule.class
 quizschedule.class : quizschedule.java servletUtils.class retakesReader.class retakeBean.class retakes.class quizReader.class quizzes.class quizBean.class apptsReader.class apptBean.class courseReader.class courseBean.class
-	cd ..; javac quizretakes/quizschedule.java ; cd quizretakes
+	javac quizretakes/quizschedule.java 
 
 servletUtils.class : servletUtils.java
-	cd ..; javac quizretakes/servletUtils.java ; cd quizretakes
+	javac quizretakes/servletUtils.java
 
 quizReader.class : quizReader.java quizzes.class quizBean.java
-	cd ..; javac quizretakes/quizReader.java ; cd quizretakes
+	javac quizretakes/quizReader.java
 
 retakesReader.class : retakesReader.java retakes.class retakeBean.java
-	cd ..; javac quizretakes/retakesReader.java ; cd quizretakes
+	javac quizretakes/retakesReader.java
 
 quizzes.class : quizzes.java quizBean.class
-	cd ..; javac quizretakes/quizzes.java ; cd quizretakes
+	javac quizretakes/quizzes.java
 
 quizBean.class : quizBean.java
-	cd ..; javac quizretakes/quizBean.java ; cd quizretakes
+	javac quizretakes/quizBean.java
 
 retakes.class : retakes.java retakeBean.class
-	cd ..; javac quizretakes/retakes.java ; cd quizretakes
+	javac quizretakes/retakes.java
 
 retakeBean.class : retakeBean.java
-	cd ..; javac quizretakes/retakeBean.java ; cd quizretakes
+	javac quizretakes/retakeBean.java
 
 apptsReader.class : apptsReader.java apptBean.class
-	cd ..; javac quizretakes/apptsReader.java ; cd quizretakes
+	javac quizretakes/apptsReader.java
 
 apptBean.class : apptBean.java
-	cd ..; javac quizretakes/apptBean.java ; cd quizretakes
+	javac quizretakes/apptBean.java
 
 courseReader.class : courseReader.java courseBean.class
-	cd ..; javac quizretakes/courseReader.java ; cd quizretakes
+	javac quizretakes/courseReader.java
 
 courseBean.class : courseBean.java
-	cd ..; javac quizretakes/courseBean.java ; cd quizretakes
+	javac quizretakes/courseBean.java
