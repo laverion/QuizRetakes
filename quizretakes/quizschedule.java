@@ -279,7 +279,7 @@ private void printQuizScheduleForm (UI ui, quizzes quizList, retakes retakesList
    inputArray= input.split(" ");
    
    //calls the do post method to do the saving 
-   doPost(input, name, inputArray, ui);
+   doPost(courseID, name, inputArray, ui);
 	}
 }
 

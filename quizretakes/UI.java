@@ -34,10 +34,24 @@ public class UI {
 //	
 	
 	public UI() {
-		quizschedule quizschedule = new quizschedule();
-		quizschedule.doGet(this);
 		
 	}
+	
+	public void startUI() {
+		String isProfessor = getUserChoice("Are you a professor (y/n): ");
+		
+		if(isProfessor.toLowerCase().charAt(0) == 'y') {
+			new PrintQuizzes(this); 
+		}
+		else {
+			quizschedule quizschedule = new quizschedule();
+			quizschedule.doGet(this);
+		}
+		
+		
+	}
+	
+	
 	
 	
 	/**
@@ -53,17 +67,6 @@ public class UI {
 		return str;
 	}
 	
-	
-	/**
-	 * Prompts the User to input a number that is with in the range (0,range]
-	 * @param options The selection choices
-	 * @param range The max number the user can select
-	 * @return return an array of int within the range
-	 */
-	public int[] getUserChoice(String options, int range) {
-		//Eden
-		return null;
-	}
 	
 	/**
 	 * Prints to the user 
@@ -89,6 +92,7 @@ public class UI {
 	public static void main(String[] args) {
 		
 		UI ui = new UI();
+		ui.startUI();
 
 	}
 }
