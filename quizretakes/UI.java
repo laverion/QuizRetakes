@@ -38,8 +38,17 @@ public class UI {
 	}
 	
 	public void startUI() {
+	
+		//ensures that the user either enters y or n asking if a person is a professor 
+		//or not
 		String isProfessor = getUserChoice("Are you a professor (y/n): ");
+		while(isProfessor.toLowerCase().charAt(0) != 'y' && isProfessor.toLowerCase().charAt(0) != 'n'){
+			System.out.println("Please enter a valid choice like Y, y, N, or n.");
+			isProfessor = getUserChoice("Are you a professor (y/n): ");
+		}
 		
+		//prints out the students who want to do a retake if y to the professor question
+		//or schedules an appointment for the student if n was selected
 		if(isProfessor.toLowerCase().charAt(0) == 'y') {
 			new PrintQuizzes(this); 
 		}
@@ -47,8 +56,6 @@ public class UI {
 			quizschedule quizschedule = new quizschedule();
 			quizschedule.doGet(this);
 		}
-		
-		
 	}
 	
 	
